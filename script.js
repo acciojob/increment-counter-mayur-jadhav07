@@ -1,16 +1,19 @@
 //your JS code here. If required.
-// Get the counter paragraph and the increment button
-const counterParagraph = document.getElementById('counter');
+// Get references to the counter paragraph and increment button
+const counterElement = document.getElementById('counter');
 const incrementButton = document.getElementById('incrementBtn');
 
-// Add event listener to the increment button
-incrementButton.addEventListener('click', () => {
-    // Get the current value of the counter
-    const currentValue = parseInt(counterParagraph.textContent);
-
-    // Display an alert with the current value before incrementing
-    alert('Current value: ' + currentValue);
-
-    // Increment the counter value and update the paragraph text
-    counterParagraph.textContent = currentValue + 1;
+// Add click event listener to the increment button
+incrementButton.addEventListener('click', function() {
+  // Get the current value of the counter
+  let currentValue = parseInt(counterElement.textContent);
+  
+  // Display an alert with the un-incremented value
+  alert(currentValue); 
+  
+  // Increment the counter value
+  currentValue++;
+  
+  // Update the counter paragraph with the new value
+  counterElement.textContent = currentValue;
 });
